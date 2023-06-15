@@ -21,9 +21,14 @@ public class Inventory {
     @Column(name = "inventory_id", nullable = false)
     private long inventory_id;
 
-    //This creates a foreign key column in the inventory table (this table) that references the product_id column in the product table
-    //JoinColumn(name = "product_id") means that the foreign key column in the inventory table will be called "product_id"
+    // This creates a foreign key column in the inventory table (this table) that
+    // references the product_id column in the product table
+    // JoinColumn(name = "product_id") means that the foreign key column in the
+    // inventory table will be called "product_id"
     @OneToOne(optional = false, orphanRemoval = true)
     @JoinColumn(name = "product_id", nullable = false, unique = true)
     private Product product;
+
+    @Column(name = "quantity", nullable = false)
+    private int quantity;
 }
