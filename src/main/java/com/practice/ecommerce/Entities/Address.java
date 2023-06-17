@@ -27,18 +27,20 @@ public class Address {
     @Column(name = "city", nullable = false)
     private String city;
 
-    @Column(name="address_line_1", nullable = false)
+    @Column(name = "address_line_1", nullable = false)
     private String address_line_1;
 
-    @Column(name="address_line_2", nullable = false)
+    @Column(name = "address_line_2", nullable = false)
     private String address_line_2;
 
-    @Column(name="postal_code", nullable = false)
+    @Column(name = "postal_code", nullable = false)
     private String postal_code;
 
-    //This creates a foreign key column in the address table that references the user_id column in the user table
-    //JoinColumn(name = "user_id") means that the foreign key column in the address table will be called "user_id"
-    @ManyToOne(optional= false)
+    // This creates a foreign key column in the address table that references the
+    // user_id column in the user table
+    // JoinColumn(name = "user_id") means that the foreign key column in the address
+    // table will be called "user_id"
+    @ManyToOne(optional = false)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 

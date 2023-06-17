@@ -17,7 +17,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-//Changed the name of the table to orders because order is a reserved word in SQL
+// Changed the name of the table to orders because order is a reserved word in
+// SQL
 @Table(name = "orders")
 @Getter
 @Setter
@@ -27,11 +28,11 @@ public class Order {
     @Column(name = "order_id", nullable = false)
     private long order_id;
 
-    @ManyToOne(optional= false)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @ManyToOne(optional= false)
+    @ManyToOne(optional = false)
     @JoinColumn(name = "address_id", nullable = false)
     private Address address;
 
