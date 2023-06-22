@@ -20,6 +20,10 @@ public class RegistrationBody {
 	private String email;
 
 	@NotBlank
+	/*
+	 * This regex checks if the password has at least one uppercase letter, one
+	 * lowercase letter and one number
+	 */
 	@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$")
 	@Size(min = 8, max = 30)
 	private String password;
